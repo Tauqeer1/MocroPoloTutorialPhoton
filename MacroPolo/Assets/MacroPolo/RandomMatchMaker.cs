@@ -66,6 +66,11 @@ public class RandomMatchMaker : Photon.PunBehaviour {
     {
         Debug.Log("Joined the room");
         GameObject monster = PhotonNetwork.Instantiate("monsterprefab", Vector3.zero, Quaternion.identity, 0);
+        Debug.Log("Instantiate the gameobject");
+        CharacterControl controller = monster.GetComponent<CharacterControl>();
+        controller.enabled = true;
+        CharacterCamera camera = monster.GetComponent<CharacterCamera>();
+        camera.enabled = true;
     }
 
 }
